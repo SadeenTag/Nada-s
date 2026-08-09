@@ -1,0 +1,46 @@
+:root {
+  font-family: Inter, Arial, sans-serif;
+
+  /* Site Palette */
+  --navy: #0b1f3a;
+  --navy-light: #163d69;
+  --blue: #2f6fed;
+  --soft-blue: #dcecff;
+  --white: #ffffff;
+  --gray: #607086;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--white);
+  color: var(--navy);
+}
+
+button {
+  font: inherit;
+}
+
+.website {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

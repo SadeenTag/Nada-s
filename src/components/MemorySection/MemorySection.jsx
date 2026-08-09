@@ -38,7 +38,7 @@ const thirdMemory = {
     "He is gonna be something so great.",
   ],
   leftPhoto: "/images/class.jpeg",
-  rightPhoto: "/images/him.jpeg",
+  rightPhoto: "/images/looking.jpeg",
   ending: "we still have quite abit baby ♡",
 };
 

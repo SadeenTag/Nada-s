@@ -595,7 +595,7 @@ const NextMemoriesSection = forwardRef(function NextMemoriesSection(_, ref) {
                       <div className="fake-spotify-disc">♫</div>
                       <div>
                         <strong>Fascination</strong>
-                        <span>anghami bta3 fala7een nooo</span>
+                        <span>By Tamino</span>
                       </div>
                     </div>
                   )}

@@ -46,7 +46,7 @@ most amazing trip I've ever gone on, ever.
 the tram station. That day meant more to me than you will ever understand. You comforted me, distracted me, and were there for me in a way no one has ever been before, ever. I fell deeper and
 deeper. I remember you telling me about the day you got a toy from Farghaly. It was a car that was the cool black car with guns. You haven't seen anything like it since,
 and I've made it my mission to find one. I still haven't, but I'm determined, hehe.
-I went home feeling so calm, in all the chaos. Even while you had your H. pylori that you had to take painful shots for, even when you were weighed down with work and trying to get
+I went home feeling so calm, in all the chaos. Even while you had your H.Pylori and back pain that you had to take painful shots for, even when you were weighed down with work and trying to get
 the laptop, you had made time to do what you knew was most important for me: spend time with me and talk to me.
 It's a day I'll never forget.
 And the day after I arrived was when we said to each other "I love you" for the very first time, over text in the middle of a match kora. My heart exploded. I didn't know what to do. I was like, "Is this real?

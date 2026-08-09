@@ -72,7 +72,7 @@ const sixthMemory = {
       id: "cap",
       label: "the cap",
       icon: "04",
-      text: "And at some point you take off your cap and place it on your head in such a cool, nonchalant, flirty way that got my heart beating so fast I couldn't react. But I loved it hehehe.",
+      text: "And at some point you take off your cap and place it on my head in such a cool, nonchalant, flirty way that got my heart beating so fast I couldn't react. But I loved it hehehe.",
     },
     {
       id: "ride",

@@ -115,8 +115,7 @@ function FilmTapeMemoriesSection() {
   return (
     <section className="film-tape-section" ref={sectionRef}>
       <audio ref={audioRef} loop preload="auto">
-        <source src="/audio/romantic-memories.mp3" type="audio/mpeg" />
-        <source src="/audio/romantic-memories.wav" type="audio/wav" />
+        <source src="/audio/audio.mp4" type="audio/mpeg" />
       </audio>
 
       {musicBlocked && (

@@ -5,6 +5,7 @@ import NextMemoriesSection from "./components/NextMemoriesSection/NextMemoriesSe
 import UsGallerySection from "./components/UsGallerySection/UsGallerySection";
 import LaterMemoriesSection from "./components/LaterMemoriesSection/LaterMemoriesSection";
 import FinalMemoriesSection from "./components/FinalMemoriesSection/FinalMemoriesSection";
+import FilmTapeMemoriesSection from "./components/FilmTapeMemoriesSection/FilmTapeMemoriesSection";
 import "./App.css";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <UsGallerySection />
       <LaterMemoriesSection />
       <FinalMemoriesSection />
+      <FilmTapeMemoriesSection />
     </main>
   );
 }

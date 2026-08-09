@@ -188,6 +188,26 @@ function FilmTapeMemoriesSection() {
         <span>♡</span>
       </div>
 
+      <div className="film-tape-final-quote">
+        <span className="film-tape-final-quote-heart" aria-hidden="true">♡</span>
+
+        <p>
+          And this is the end of the website sweetheart, but like I told you not
+          the end of the surprise, I wanted to make a day for you that was
+          peaceful, happy, calm and loving, you deserve it so fuxking much, I
+          wanted to plan something for u that will be nice and calm like a break
+          from what life has been lately, you deserve to have such a good break
+          baby and I hope the rest of the evening brings you nothing but joy and
+          relaxation as tho the world will pause for just a few hours
+        </p>
+
+        <div className="film-tape-final-quote-ending" aria-hidden="true">
+          <span>✦</span>
+          <span>♡</span>
+          <span>✦</span>
+        </div>
+      </div>
+
       {focusedImage && (
         <div
           className="film-lightbox"

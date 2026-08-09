@@ -716,3 +716,164 @@
     animation-delay: 0s !important;
   }
 }
+
+/* ==================================================
+   FINAL QUOTE
+================================================== */
+
+.film-tape-final-quote {
+  position: relative;
+  z-index: 6;
+
+  width: min(760px, 90%);
+  margin: clamp(34px, 5vw, 58px) auto 0;
+  padding:
+    clamp(28px, 4vw, 42px)
+    clamp(24px, 4vw, 44px);
+
+  border: 1px solid rgba(22, 61, 105, 0.12);
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.76);
+
+  box-shadow:
+    0 22px 52px rgba(11, 31, 58, 0.09),
+    inset 0 0 0 7px rgba(247, 166, 192, 0.04);
+
+  backdrop-filter: blur(14px);
+
+  text-align: center;
+}
+
+.film-tape-final-quote::before {
+  content: "";
+
+  position: absolute;
+  inset: 10px;
+
+  border: 1px solid rgba(223, 118, 154, 0.13);
+  border-radius: 19px;
+
+  pointer-events: none;
+}
+
+.film-tape-final-quote-heart {
+  position: relative;
+  z-index: 2;
+
+  display: inline-grid;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 241, 246, 0.95);
+  color: #df769a;
+
+  font-size: 2rem;
+
+  box-shadow:
+    0 10px 24px rgba(185, 78, 115, 0.08),
+    0 0 0 7px rgba(247, 166, 192, 0.05);
+
+  animation: filmFinalQuoteHeart 2.2s ease-in-out infinite;
+}
+
+.film-tape-final-quote p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: #42556c;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.45vw, 1.13rem);
+  line-height: 1.8;
+}
+
+.film-tape-final-quote-ending {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+
+  color: #df769a;
+}
+
+.film-tape-final-quote-ending span {
+  display: inline-block;
+
+  animation: filmFinalQuoteFloat 2.8s ease-in-out infinite alternate;
+}
+
+.film-tape-final-quote-ending span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.film-tape-final-quote-ending span:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes filmFinalQuoteHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  18% {
+    transform: scale(1.1);
+  }
+
+  36% {
+    transform: scale(1);
+  }
+
+  52% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes filmFinalQuoteFloat {
+  from {
+    transform:
+      translateY(2px)
+      rotate(-4deg);
+  }
+
+  to {
+    transform:
+      translateY(-5px)
+      rotate(4deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .film-tape-final-quote {
+    width: 92%;
+    margin-top: 30px;
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+  .film-tape-final-quote p {
+    font-size: 0.97rem;
+    line-height: 1.68;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-tape-final-quote-heart,
+  .film-tape-final-quote-ending span {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+  }
+}

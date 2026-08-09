@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./FilmTapeMemoriesSection.css";
+import "./FilmTapeMusicButton.css";
 
 const memories = Array.from({ length: 20 }, (_, index) => ({
   id: index + 1,
@@ -9,6 +10,11 @@ const memories = Array.from({ length: 20 }, (_, index) => ({
 
 function FilmTapeMemoriesSection() {
   const [focusedImage, setFocusedImage] = useState(null);
+  const [musicBlocked, setMusicBlocked] = useState(false);
+
+  const sectionRef = useRef(null);
+  const audioRef = useRef(null);
+  const sectionVisibleRef = useRef(false);
 
   useEffect(() => {
     const closeOnEscape = (event) => {
@@ -22,10 +28,106 @@ function FilmTapeMemoriesSection() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    const audio = audioRef.current;
+
+    if (!section || !audio) return;
+
+    audio.volume = 0.55;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        sectionVisibleRef.current = entry.isIntersecting;
+
+        if (entry.isIntersecting) {
+          audio
+            .play()
+            .then(() => setMusicBlocked(false))
+            .catch(() => setMusicBlocked(true));
+        } else {
+          audio.pause();
+        }
+      },
+      {
+        threshold: 0.35,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      audio.pause();
+    };
+  }, []);
+
+  useEffect(() => {
+    const unlockAudio = () => {
+      const audio = audioRef.current;
+
+      if (!audio) return;
+
+      /*
+        Browsers may block sound until the visitor interacts once.
+        Your site already has buttons before this section, so this
+        quietly unlocks this audio element on the first click/tap.
+      */
+      const wasPaused = audio.paused;
+
+      audio
+        .play()
+        .then(() => {
+          if (!sectionVisibleRef.current && wasPaused) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+
+          setMusicBlocked(false);
+        })
+        .catch(() => {});
+    };
+
+    window.addEventListener("pointerdown", unlockAudio, {
+      once: true,
+      capture: true,
+    });
+
+    return () =>
+      window.removeEventListener("pointerdown", unlockAudio, {
+        capture: true,
+      });
+  }, []);
+
+  const startMusic = () => {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    audio
+      .play()
+      .then(() => setMusicBlocked(false))
+      .catch(() => setMusicBlocked(true));
+  };
+
   const repeatedMemories = [...memories, ...memories];
 
   return (
-    <section className="film-tape-section">
+    <section className="film-tape-section" ref={sectionRef}>
+      <audio ref={audioRef} loop preload="auto">
+        <source src="/audio/romantic-memories.mp3" type="audio/mpeg" />
+        <source src="/audio/romantic-memories.wav" type="audio/wav" />
+      </audio>
+
+      {musicBlocked && (
+        <button
+          type="button"
+          className="film-music-start"
+          onClick={startMusic}
+        >
+          tap for music ♡
+        </button>
+      )}
       <div className="film-tape-grain" aria-hidden="true" />
       <div className="film-tape-light film-tape-light-one" aria-hidden="true" />
       <div className="film-tape-light film-tape-light-two" aria-hidden="true" />

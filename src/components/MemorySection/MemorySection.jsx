@@ -23,7 +23,7 @@ const secondMemory = {
   message: [
     "Few years passed, we both went on to have shit happen in our lives, we grew up a little or a lot hahaha, we matured a bit.",
     "Now it was after my car accident and after some truama and sadness bu i had gotten better and started going to school again.",
-    "By that time id hear about you all the times from my girlfriends in glass because they had gotten into shutter.",
+    "By that time id hear about you all the times from my girlfriends in class because they had gotten into shutter.",
     "I hadnt yet cause i was still getting used to everything again and didnt want to take on more than i can handle.",
   ],
 };
